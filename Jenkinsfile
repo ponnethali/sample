@@ -1,4 +1,4 @@
-@@ -9,23 +9,23 @@ pipeline {
+pipeline {
   stages {
     stage('Build') {
       steps {
