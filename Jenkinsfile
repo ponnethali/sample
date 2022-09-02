@@ -5,6 +5,7 @@ pipeline {
   }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('aliponneth')
+  }
   stages {
     stage('Build') {
       steps {
