@@ -1,4 +1,10 @@
 pipeline {
+  agent { label 'Linux' }
+  options {
+    buildDiscarder(logRottor(numToKeepStr: '5'))
+  }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('aliponneth')
   stages {
     stage('Build') {
       steps {
