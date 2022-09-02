@@ -2,7 +2,7 @@
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t darinpope/dp-alpine:latest .'
+        sh 'docker build -t aliponneth/app:latest .'
         sh './jenkins/build.sh'
       }
     }
