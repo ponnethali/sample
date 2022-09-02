@@ -28,8 +28,8 @@ pipeline {
   }
   post {
     always {
-      sh 'docker logout'
-      //sh './jenkins/logout.sh'
+      //sh 'docker logout'
+      sh './jenkins/logout.sh'
       echo 'The pipeline completed'
     }
   }
