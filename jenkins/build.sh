@@ -1,5 +1,5 @@
 #!/bin/bash
-cp /home/azureuser/index.html .
+git clone https://github.com/ponnethali/sample.git
 touch Dockerfile
 echo "  
 FROM nginx:alpine
