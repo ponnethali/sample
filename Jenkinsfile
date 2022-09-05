@@ -7,13 +7,10 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('	ponnethali_dockerhub')
   }
    stages {
-     stage('Docker') {
+     stage('Dockerfile') {
       steps {
-        sh 'touch Dockerfile \
-        echo " \
-        FROM nginx:alpine \
-        COPY index.html /usr/share/nginx/html">>Dockerfile '
-        sh 'sudo docker build -t aliponnethapp:latest .'
+        sh 'git clone https://github.com/ponnethali/sample.git'
+        #sh 'sudo docker build -t aliponnethapp:latest .'
         
       }
     }
