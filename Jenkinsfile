@@ -9,6 +9,7 @@ pipeline {
    stages {
      stage('Dockerfile') {
       steps {
+         echo 'The pipeline started'
         //sh 'rm -rf .git'
         //sh 'git clone https://github.com/ponnethali/sample.git'
         
