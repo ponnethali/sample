@@ -7,13 +7,7 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('	ponnethali_dockerhub')
   }
    stages {
-    stage('Build') {
-      steps {
-        sh 'docker build -t aliponneth/app:latest .'
-        sh './jenkins/build.sh'
-      }
-    }
-    stage('Docker') {
+     stage('Docker') {
       steps {
         sh 'touch Dockerfile'
         sh 'echo " ' 
@@ -23,6 +17,14 @@ pipeline {
         
       }
     }
+     
+    stage('Build') {
+      steps {
+        sh 'docker build -t aliponneth/app:latest .'
+        sh './jenkins/build.sh'
+      }
+    }
+    
     stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
