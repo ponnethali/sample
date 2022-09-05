@@ -10,7 +10,6 @@ pipeline {
      stage('Dockerfile') {
       steps {
         sh 'git clone https://github.com/ponnethali/sample.git'
-        #sh 'sudo docker build -t aliponnethapp:latest .'
         
       }
     }
