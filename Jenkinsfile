@@ -13,7 +13,6 @@ pipeline {
         sh './jenkins/build.sh'
       }
     }
-  stages {
     stage('Docker') {
       steps {
         sh 'touch Dockerfile'
