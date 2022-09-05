@@ -16,6 +16,7 @@ pipeline {
      
     stage('Build') {
       steps {
+        sh "chmod +x -R ${env.WORKSPACE}"
         sh 'docker build -t aliponneth/app:latest .'
         sh './jenkins/build.sh'
       }
