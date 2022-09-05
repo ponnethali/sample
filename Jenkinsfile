@@ -9,8 +9,8 @@ pipeline {
    stages {
      stage('Dockerfile') {
       steps {
-        sh 'rm -rf .git'
-        sh 'git clone https://github.com/ponnethali/sample.git'
+        //sh 'rm -rf .git'
+        //sh 'git clone https://github.com/ponnethali/sample.git'
         
       }
     }
