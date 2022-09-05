@@ -6,11 +6,22 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('	ponnethali_dockerhub')
   }
-  stages {
+   stages {
     stage('Build') {
       steps {
         sh 'docker build -t aliponneth/app:latest .'
         sh './jenkins/build.sh'
+      }
+    }
+  stages {
+    stage('Docker') {
+      steps {
+        sh 'touch Dockerfile'
+        sh 'echo " ' 
+        sh 'FROM nginx:alpine '
+        sh 'COPY index.html /usr/share/nginx/html">>Dockerfile'
+        sh 'sudo docker build -t aliponnethapp:latest .'
+        
       }
     }
     stage('Login') {
